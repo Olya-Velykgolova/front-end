@@ -1,7 +1,32 @@
 /*begin main styles*/
 @font-face{
-	font-family:Rockwell;
-	src:url(../fonts/rockwell.ttf);
+	font-family:'Rockwell';
+    font-weight:normal;
+    font-style:normal;
+    src:url('../fonts/Rockwell.eot'),
+        url('../fonts/Rockwell.ttf') format('truetype');
+} 
+@font-face{
+    font-family:'iconfont';
+    font-weight:normal;
+    font-style:normal;
+    src:url('../fonts/iconfont.eot');
+    src:url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/iconfont.woff') format('woff'),
+        url('../fonts/iconfont.ttf') format('truetype'),
+        url('../fonts/iconfont.svg#icomoonregular') format('svg');
+}
+@font-face{
+    font-family:'Raleway';
+    font-weight:normal;
+    font-style:normal;
+    src:url('../fonts/Raleway-Regular.ttf') format('truetype');
+}
+@font-face{
+    font-family:'Raleway';
+    font-weight:bold;
+    font-style:normal;
+    src:url('../fonts/Raleway-Bold.ttf') format('truetype');
 }
 *{
 	box-sizing: border-box;
@@ -15,14 +40,15 @@ body{
 }
 h1{	
 	font-family: 'Rockwell', serif;
-	font-size: 41px;
-	line-height: 41px;
+	font-size: 48px;
+	line-height: 48px;
 }
 .container{
 	width:1280px;
 	margin: 0 auto;
 	padding: 0 50px;
 }
+.row:after,
 .clearfix:after,
 .container:after{
 	display: block;
@@ -30,7 +56,7 @@ h1{
 	clear: both;
 }
 .screen{
-	height: calc(100vh - 150px);
+	height: calc(158vh - 150px);
 }
 .btn{	
 	text-decoration: none;
@@ -47,6 +73,14 @@ h1{
 	background:#202242;
 	color:#ffe13e;
 }
+.row{}
+.col{	
+	float:left;
+	height: 100%;/*як розтягнути всю висоту батька*/
+}
+.col-2{
+	width:50%;
+}
 /*end main styles*/
 
 /*begin header styles*/
@@ -62,18 +96,6 @@ h1{
 	float:left;
 }
 .header .logo .emblem{
-	/*Чому не видно висоту для блока.
-	необхідної висоти добивалася через padding (147/2=73,5)
-	якщо працювати з padding то у батьківського елемента height 
-	на 4 px більша ніж мала б бути*/
-	/*display: inline-block;
-	width:40px;
-	height: 40px;
-	padding: 53.5px 0 53.5px 0;
-	background:url(../images/logo.svg) center no-repeat;
-	background-size: contain;*/
-
-	/*Ось це рішення працює*/
 	float:left;
 	width:34px;
 	height: 34px;
@@ -97,7 +119,7 @@ h1{
 .header .nav{
 	float:left;
 	padding: 0;
-	margin: 0;
+	margin: 0 32px 0 0;
 	border-right:1px solid #ebebeb;
 }
 .header .nav li{
@@ -106,10 +128,6 @@ h1{
 	line-height: 0;
 	margin: 63px 30px 48px 0;
 }
-
-.header .nav li:last-child{
-	margin-right: 32px;
-}
 .header .nav li a{
 	font-size:16px;	
 	line-height: 36px;
@@ -117,9 +135,6 @@ h1{
 	text-decoration: none;
 	color: #202242;
 	padding:18px 6px;
-	/*як зробити меню на одній лінії
-	з логотипом...я можу його відцентрувати з допомогою padding. 
-	я зсунула його на одну лінію з допомогою margin в .header .nav li*/
 }
 .header .nav li a.active,
 .header .nav li a:hover{
@@ -128,8 +143,6 @@ h1{
 }
 .header .contact{
 	float: right;
-	/*font-size: 12px;
-	line-height: 12px;*/
 	color:#202242;
 	padding: 40px 10px 32px 0px;
 	line-height: 0;
@@ -164,27 +177,65 @@ h1{
 .screen._splash{
 	background: url(../images/layer_splash.png) 60% 70% fixed;
 	background-size: cover;
+	position: relative;
 	font-size: 30px;
 	line-height: 30px;
 }
 .screen._splash .semiopacity{
 	background: rgba(0, 0, 0, 0.3);
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	z-index: 5;
 }
 .screen._splash .container{
 	color: #fff;
-	position: absolute;
+	position: relative;
+	z-index: 6;
 	top:50%;
 	text-align: center;
-	/*transform:translateY(-50%);*/
+	transform: translateY(-50%);
 }
 .screen._splash .icon{
 	display: inline-block;
-	width:62px;
-	height:70px;
+	width:92px;
+	height:100px;
 	background: url(../images/shape.png) no-repeat;
-	background-size: cover;
+	background-size: contain;
+	margin: 60px 0 0 0;
 }
-.screen form.domain{
-	border:solid 5px #dddddd;
+.screen._splash form.domain{
+	border:solid 19px #dddddd;
+	display: inline-block;
+	margin: 60px 0 0 0;	
+	font-size: 18px;
+	line-height: 18px;
+}
+.screen._splash form.domain .form-control{
+	float: left;
+}
+.screen._splash form.domain input{
+	padding: 15px 47px 15px 30px;
+	color:#000;
+	border: 0;
+}
+.screen._splash form.domain select{
+	border: 0;
+	background: #ffe13e;
+	color: #000;
+	font-weight: bold;
+	/*лишніх 5px висота має бути 18+15+15=48 а є 53*
+	padding: 15px 47px 15px 30px;
+	не виходить одинаково вирівняти вкладеності*/
+	padding: 14px 14px 14px 30px;
+}
+.screen._splash form.domain button{
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: bold;
+	border: 0;
+	border-left: 1px solid #fff;
+	background: #ffe13e;
+	color: #fff;	
+	padding: 18.5px 18.5px 18.5px 18.5px;
 }
 /*end splash*/
