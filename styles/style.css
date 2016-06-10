@@ -1,0 +1,190 @@
+/*begin main styles*/
+@font-face{
+	font-family:Rockwell;
+	src:url(../fonts/rockwell.ttf);
+}
+*{
+	box-sizing: border-box;
+	padding: 0; margin: 0;
+}
+body{	
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	color:#adadad;
+	margin:147px 0 0 0;
+}
+h1{	
+	font-family: 'Rockwell', serif;
+	font-size: 41px;
+	line-height: 41px;
+}
+.container{
+	width:1280px;
+	margin: 0 auto;
+	padding: 0 50px;
+}
+.clearfix:after,
+.container:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.screen{
+	height: calc(100vh - 150px);
+}
+.btn{	
+	text-decoration: none;
+	font-size:14px;
+	line-height:14px;
+	padding: 13px 28px;
+}
+.btn.btn-default{
+	background:#ffe13e;
+	color:#202242;
+	transition: all .5s ease;
+}
+.btn.btn-default:hover{
+	background:#202242;
+	color:#ffe13e;
+}
+/*end main styles*/
+
+/*begin header styles*/
+.header{
+	width:100%;
+	background: #fff; 
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 999;
+}
+.header .logo{
+	float:left;
+}
+.header .logo .emblem{
+	/*Чому не видно висоту для блока.
+	необхідної висоти добивалася через padding (147/2=73,5)
+	якщо працювати з padding то у батьківського елемента height 
+	на 4 px більша ніж мала б бути*/
+	/*display: inline-block;
+	width:40px;
+	height: 40px;
+	padding: 53.5px 0 53.5px 0;
+	background:url(../images/logo.svg) center no-repeat;
+	background-size: contain;*/
+
+	/*Ось це рішення працює*/
+	float:left;
+	width:34px;
+	height: 34px;
+	margin: 56.5px 0 56.5px 0;
+	background:url(../images/logo.svg) center no-repeat;
+	background-size: contain;
+}
+.header .logo .text{
+	float:left;
+	font-family: 'Rockwell', serif;
+	text-decoration: none;
+	color: #202242;
+	font-size: 30px;
+	line-height: 30px;
+	padding: 58.5px 0; 
+	margin: 0 100px 0 17px;
+}
+.header a.logo:visited{	
+	color:#202242;
+}
+.header .nav{
+	float:left;
+	padding: 0;
+	margin: 0;
+	border-right:1px solid #ebebeb;
+}
+.header .nav li{
+	float:left;
+	list-style: none;
+	line-height: 0;
+	margin: 63px 30px 48px 0;
+}
+
+.header .nav li:last-child{
+	margin-right: 32px;
+}
+.header .nav li a{
+	font-size:16px;	
+	line-height: 36px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #202242;
+	padding:18px 6px;
+	/*як зробити меню на одній лінії
+	з логотипом...я можу його відцентрувати з допомогою padding. 
+	я зсунула його на одну лінію з допомогою margin в .header .nav li*/
+}
+.header .nav li a.active,
+.header .nav li a:hover{
+	color: #ffe13e;
+	font-weight: bold;
+}
+.header .contact{
+	float: right;
+	/*font-size: 12px;
+	line-height: 12px;*/
+	color:#202242;
+	padding: 40px 10px 32px 0px;
+	line-height: 0;
+}
+.header .contact_text{	
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 12px;
+}
+.header .btn{	
+	font-weight: 600;
+	display: inline-block;
+	margin: 22px 20px 0px 0px;
+	float:left;
+	line-height: 15px;
+	font-size: 15px;
+}
+.header .tel{
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	padding: 6px 0 5.5px 10px;
+	margin: 27px 0 0px 0;
+	float:right;
+	font-size:24px;
+	line-height: 24px;
+	border-left:1px solid #202242;
+}
+
+/*end header styles*/
+
+/*begin splash*/
+.screen._splash{
+	background: url(../images/layer_splash.png) 60% 70% fixed;
+	background-size: cover;
+	font-size: 30px;
+	line-height: 30px;
+}
+.screen._splash .semiopacity{
+	background: rgba(0, 0, 0, 0.3);
+}
+.screen._splash .container{
+	color: #fff;
+	position: absolute;
+	top:50%;
+	text-align: center;
+	/*transform:translateY(-50%);*/
+}
+.screen._splash .icon{
+	display: inline-block;
+	width:62px;
+	height:70px;
+	background: url(../images/shape.png) no-repeat;
+	background-size: cover;
+}
+.screen form.domain{
+	border:solid 5px #dddddd;
+}
+/*end splash*/
