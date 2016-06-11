@@ -3,8 +3,8 @@
 	font-family:'Rockwell';
     font-weight:normal;
     font-style:normal;
-    src:url('../fonts/Rockwell.eot'),
-        url('../fonts/Rockwell.ttf') format('truetype');
+    src:url('../fonts/rockwell.eot'),
+        url('../fonts/rockwell.ttf') format('truetype');
 } 
 @font-face{
     font-family:'iconfont';
