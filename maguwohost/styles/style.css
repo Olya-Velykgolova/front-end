@@ -191,7 +191,8 @@ h2{
 	background-size: cover;
 	position: relative;
 	font-size: 30px;
-	line-height: 30px;
+	line-height: 30px;	
+	min-height: 430px;
 }
 .screen._splash .semiopacity{
 	background: rgba(0, 0, 0, 0.3);
@@ -257,6 +258,7 @@ h2{
 	/*height: 100%;
 	padding: 147px 0 0 0;*/
 	/*через це в мене зявляється padding і потім в дочірніх класах я нічого не можу зробити*/
+	min-height: 500px;
 	height: 100%;
 }
 .screen._services .webserv{
