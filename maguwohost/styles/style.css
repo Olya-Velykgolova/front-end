@@ -43,6 +43,12 @@ h1{
 	font-size: 48px;
 	line-height: 48px;
 }
+h2{
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	font-size: 36px;
+	color: #fff;
+}
 .container{
 	width:1280px;
 	margin: 0 auto;
@@ -56,7 +62,8 @@ h1{
 	clear: both;
 }
 .screen{
-	height: calc(158vh - 150px);
+	height: calc(100vh - 147px);
+	position: relative;
 }
 .btn{	
 	text-decoration: none;
@@ -76,10 +83,15 @@ h1{
 .row{}
 .col{	
 	float:left;
-	height: 100%;/*як розтягнути всю висоту батька*/
+	/*height: 100%;/*як розтягнути всю висоту батька*/
 }
 .col-2{
 	width:50%;
+}
+.verticalc{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
 /*end main styles*/
 
@@ -189,11 +201,8 @@ h1{
 }
 .screen._splash .container{
 	color: #fff;
-	position: relative;
 	z-index: 6;
-	top:50%;
 	text-align: center;
-	transform: translateY(-50%);
 }
 .screen._splash .icon{
 	display: inline-block;
@@ -239,3 +248,77 @@ h1{
 	padding: 18.5px 18.5px 18.5px 18.5px;
 }
 /*end splash*/
+
+/*begin services*/
+.screen._services .row{
+	/*height:calc(100%-147px); */
+	/*не працює height calc з %*/
+
+	/*height: 100%;
+	padding: 147px 0 0 0;*/
+	/*через це в мене зявляється padding і потім в дочірніх класах я нічого не можу зробити*/
+	height: 100%;
+}
+.screen._services .webserv{
+	color: #fff;
+	background: #202242;
+	height:100%;
+	text-align: center;
+	/*padding: -147px 0 0 0;*/
+}
+.screen._services .domserv{
+	color: #fff;
+	background: #ffe13e;
+	height:100%;
+	/*margin: -147px 0 0 0;*/
+}
+.screen._services .webserv .container{
+	padding: 0px 85px 0px 185px;
+	width:100%;
+}
+.screen._services .domserv .container{
+	padding: 0px 185px 0px 85px;
+	width:100%;
+}
+.screen._services .container p{
+	font-size: 14px;
+	line-height: 2;
+}
+.screen._services .icon{
+	display: inline-block;
+	width:164px;
+	height:170px;
+	margin: 33px 0;
+}
+.screen._services .webserv .icon{
+	background: url(../images/webserv.png) no-repeat;
+	background-size: contain;
+}
+.screen._services .domserv .icon{
+	font-size: 134px;
+	line-height: 134px;
+	color:#202242;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+}
+.screen._services h2{
+	margin: 20px 0 0 0;
+}
+.screen._services .btn.more{
+	display: inline-block;/*задала цю вдастивість бо через padding налазив на p*/
+	border: 3px solid #fff;
+	color: #fff;
+	padding: 16px 55px;	
+	margin: 20px 0;
+}
+.screen._services .webserv .btn.more:hover{
+	background: #fff;
+	color: #202242;
+	transition: all .5s ease;
+}
+.screen._services .domserv .btn.more:hover{
+	background: #fff;
+	color: #ffe13e;
+	transition: all .5s ease;
+}
+/*end services*/
