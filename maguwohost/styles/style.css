@@ -316,11 +316,11 @@ h2{
 .screen._services .webserv .btn.more:hover{
 	background: #fff;
 	color: #202242;
-	transition: all .5s ease;
+	transition: color .5s ease-in-out, background 1s ease-in-out;
 }
 .screen._services .domserv .btn.more:hover{
 	background: #fff;
 	color: #ffe13e;
-	transition: all .5s ease;
+	transition: color .5s ease-in-out, background 1s ease-in-out;
 }
 /*end services*/
