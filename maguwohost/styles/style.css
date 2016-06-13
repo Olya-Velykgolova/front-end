@@ -44,15 +44,30 @@ h1{
 	line-height: 48px;
 }
 h2{
+	font-size: 48px;
+	line-height: 48px;
+	font-weight:bold;
+	color: #202242;
+	font-family: 'Raleway', sans-serif;
+}
+h3{
 	font-family: 'Raleway', sans-serif;
 	font-weight: bold;
 	font-size: 36px;
+	line-height: 36px;
 	color: #fff;
+}
+h4{
+	font-size: 24px;
+	line-height: 24px;
+	color: #202242;
+	font-family: 'Raleway', sans-serif;
 }
 .container{
 	width:1280px;
 	margin: 0 auto;
-	padding: 0 50px;
+	padding: 0 50px;	
+	position: relative;
 }
 .row:after,
 .clearfix:after,
@@ -62,7 +77,6 @@ h2{
 	clear: both;
 }
 .screen{
-	height: calc(100vh - 147px);
 	position: relative;
 }
 .btn{	
@@ -83,104 +97,103 @@ h2{
 .row{}
 .col{	
 	float:left;
-	/*height: 100%;/*як розтягнути всю висоту батька*/
 }
 .col-2{
 	width:50%;
 }
-.verticalc{
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+.col-4{
+	width: 25%;
 }
 /*end main styles*/
 
 /*begin header styles*/
 .header{
-	width:100%;
+	width: 100%;
 	background: #fff; 
 	position: fixed;
-	top:0;
-	left:0;
+	top: 0;
+	left: 0;
 	z-index: 999;
 }
 .header .logo{
-	float:left;
+	float: left;
+	margin: 57px 100px 56px 0;
 }
 .header .logo .emblem{
-	float:left;
-	width:34px;
+	float: left;
+	width: 34px;
 	height: 34px;
-	margin: 56.5px 0 56.5px 0;
-	background:url(../images/logo.svg) center no-repeat;
+	background: url(../images/logo.svg) center no-repeat;
 	background-size: contain;
 }
 .header .logo .text{
-	float:left;
+	float: left;
 	font-family: 'Rockwell', serif;
 	text-decoration: none;
 	color: #202242;
 	font-size: 30px;
 	line-height: 30px;
-	padding: 58.5px 0; 
-	margin: 0 100px 0 17px;
+	padding: 2px 0 1px 0; 
+	margin: 0 0 0 17px;
 }
 .header a.logo:visited{	
-	color:#202242;
+	color: #202242;
 }
 .header .nav{
-	float:left;
-	padding: 0;
-	margin: 0 32px 0 0;
-	border-right:1px solid #ebebeb;
+	float: left;
 }
 .header .nav li{
-	float:left;
+	float: left;
 	list-style: none;
 	line-height: 0;
 	margin: 63px 30px 48px 0;
 }
+.header .nav li:last-child{
+	margin-right: 0;
+}
 .header .nav li a{
-	font-size:16px;	
+	font-size: 16px;	
 	line-height: 36px;
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #202242;
-	padding:18px 6px;
+	padding: 18px 6px;
 }
-.header .nav li a.active,
-.header .nav li a:hover{
+.header .nav li a.active{
 	color: #ffe13e;
 	font-weight: bold;
 }
+.header .nav li a:hover{
+	color: #ffe13e;
+}
 .header .contact{
 	float: right;
-	color:#202242;
-	padding: 40px 10px 32px 0px;
+	color: #202242;
+	padding: 40px 10px 32px 45px;
 	line-height: 0;
+	border-left: 1px solid #ebebeb;
 }
 .header .contact_text{	
 	font-weight: 600;
 	font-size: 12px;
 	line-height: 12px;
 }
-.header .btn{	
+.header .contact_info .btn{	
 	font-weight: 600;
-	display: inline-block;
 	margin: 22px 20px 0px 0px;
-	float:left;
+	float: left;
 	line-height: 15px;
 	font-size: 15px;
 }
-.header .tel{
+.header .contact_info .tel{
 	font-family: 'Lato', sans-serif;
 	font-weight: bold;
 	padding: 6px 0 5.5px 10px;
 	margin: 27px 0 0px 0;
-	float:right;
-	font-size:24px;
+	float: right;
+	font-size: 24px;
 	line-height: 24px;
-	border-left:1px solid #202242;
+	border-left: 1px solid #202242;
 }
 
 /*end header styles*/
@@ -192,7 +205,9 @@ h2{
 	position: relative;
 	font-size: 30px;
 	line-height: 30px;	
+	height: calc(100vh - 147px);	
 	min-height: 430px;
+    max-height: 830px;
 }
 .screen._splash .semiopacity{
 	background: rgba(0, 0, 0, 0.3);
@@ -201,20 +216,22 @@ h2{
 	z-index: 5;
 }
 .screen._splash .container{
+	top: 50%;
+	transform: translateY(-50%);
 	color: #fff;
 	z-index: 6;
 	text-align: center;
 }
 .screen._splash .icon{
 	display: inline-block;
-	width:92px;
-	height:100px;
+	width: 92px;
+	height: 100px;
 	background: url(../images/shape.png) no-repeat;
 	background-size: contain;
 	margin: 60px 0 0 0;
 }
 .screen._splash form.domain{
-	border:solid 19px #dddddd;
+	border: solid 19px #dddddd;
 	display: inline-block;
 	margin: 60px 0 0 0;	
 	font-size: 18px;
@@ -224,19 +241,18 @@ h2{
 	float: left;
 }
 .screen._splash form.domain input{
-	padding: 15px 47px 15px 30px;
-	color:#000;
+	padding: 16px 47px 15px 30px;
+	color: #000;
 	border: 0;
 }
 .screen._splash form.domain select{
 	border: 0;
+	border-radius: 0;
 	background: #ffe13e;
 	color: #000;
 	font-weight: bold;
-	/*лишніх 5px висота має бути 18+15+15=48 а є 53*
-	padding: 15px 47px 15px 30px;
-	не виходить одинаково вирівняти вкладеності*/
-	padding: 14px 14px 14px 30px;
+	padding: 15px 14px 14px 30px;
+	height: 52px;
 }
 .screen._splash form.domain button{
 	font-size: 14px;
@@ -245,52 +261,49 @@ h2{
 	border: 0;
 	border-left: 1px solid #fff;
 	background: #ffe13e;
-	color: #fff;	
-	padding: 18.5px 18.5px 18.5px 18.5px;
+	color: #fff;
+	padding: 19px 19px 19px 19px;
 }
 /*end splash*/
 
 /*begin services*/
-.screen._services .row{
-	/*height:calc(100%-147px); */
-	/*не працює height calc з %*/
-
-	/*height: 100%;
-	padding: 147px 0 0 0;*/
-	/*через це в мене зявляється padding і потім в дочірніх класах я нічого не можу зробити*/
-	min-height: 500px;
-	height: 100%;
+.screen._services .back{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 5;
+	width: 50%;
 }
-.screen._services .webserv{
-	color: #fff;
+.screen._services .left{
+	left: 0;
 	background: #202242;
-	height:100%;
-	text-align: center;
-	/*padding: -147px 0 0 0;*/
 }
-.screen._services .domserv{
-	color: #fff;
+.screen._services .right{
+	right: 0;
 	background: #ffe13e;
-	height:100%;
-	/*margin: -147px 0 0 0;*/
+
 }
-.screen._services .webserv .container{
-	padding: 0px 85px 0px 185px;
-	width:100%;
+.screen._services .container{
+	z-index: 6;
 }
-.screen._services .domserv .container{
-	padding: 0px 185px 0px 85px;
-	width:100%;
+.screen._services .row{	
+	color: #fff;
+	text-align: center;
+}
+.screen._services .col{	
+	padding: 115px 85px;
 }
 .screen._services .container p{
 	font-size: 14px;
-	line-height: 2;
+	line-height: 24px;
 }
 .screen._services .icon{
 	display: inline-block;
-	width:164px;
-	height:170px;
-	margin: 33px 0;
+	height: 170px;
+	margin: 0 0 50px 0;
+}
+.screen._services .webserv .icon{	
+	width: 164px;
 }
 .screen._services .webserv .icon{
 	background: url(../images/webserv.png) no-repeat;
@@ -303,15 +316,15 @@ h2{
 	font-family: 'Raleway', sans-serif;
 	font-weight: bold;
 }
-.screen._services h2{
-	margin: 20px 0 0 0;
+.screen._services h3{
+	margin: 0 0 10px 0;
 }
 .screen._services .btn.more{
-	display: inline-block;/*задала цю вдастивість бо через padding налазив на p*/
+	display: inline-block;
 	border: 3px solid #fff;
 	color: #fff;
-	padding: 16px 55px;	
-	margin: 20px 0;
+	padding: 16px 58px;	
+	margin: 30px 0 0 0;
 }
 .screen._services .webserv .btn.more:hover{
 	background: #fff;
@@ -324,3 +337,14 @@ h2{
 	transition: color .5s ease-in-out, background 1s ease-in-out;
 }
 /*end services*/
+
+/*begin features*/
+.srceen._features{
+	background: url('images/back_features.png') #fbf8f1;
+	background-size: contain;
+}
+.srceen._features .container{
+	text-align: center;
+}
+
+/*end features*/
