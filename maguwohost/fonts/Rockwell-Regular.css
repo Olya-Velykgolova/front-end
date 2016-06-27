@@ -1,0 +1,11 @@
+/** Created by TTF.in.ua **/
+@font-face {
+    font-family: 'Rockwell-Regular';
+    src: url('Rockwell-Regular.eot');
+    src: url('Rockwell-Regular.eot?#iefix') format('embedded-opentype'),
+         url('Rockwell-Regular.woff') format('woff'),
+         url('Rockwell-Regular.ttf') format('truetype'),
+         url('Rockwell-Regular.svg#Rockwell-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
