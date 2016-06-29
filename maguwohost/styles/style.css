@@ -203,6 +203,7 @@ ul{
 .header .logo{
 	float: left;
 	margin: 57px 70px 56px 0;
+	color: #202242;
 }
 @media (max-width:1200px){
 	.header .logo{
