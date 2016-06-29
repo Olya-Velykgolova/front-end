@@ -17,7 +17,7 @@
 }
 @font-face{
 	font-family:'Rockwell';
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
     src:url('../fonts/rockwell_bold.eot'),
         url('../fonts/rockwell_bold.ttf') format('truetype');
@@ -97,6 +97,8 @@ ul{
 	font-size:14px;
 	line-height:14px;
 	padding: 13px 28px;
+	border-radius: 0;
+	border: none;
 }
 .btn.btn-default{
 	background:#ffe13e;
@@ -161,9 +163,52 @@ ul{
 	z-index: 999;	
 	color: #202242;
 }
+.navbar-default {
+	background-color: #fff;
+	border-color: #fff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #202242;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+	background-color: #ffe13e;
+}
+.navbar-toggle{
+	margin: 57px 15px 56px 0;
+}
+@media (min-width: 1200px) {
+  .navbar-collapse {
+    width: auto;
+    border-top: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+  .navbar-collapse.in {
+    overflow-y: visible;
+  }
+  .navbar-fixed-top .navbar-collapse,
+  .navbar-static-top .navbar-collapse,
+  .navbar-fixed-bottom .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
 .header .logo{
 	float: left;
 	margin: 57px 70px 56px 0;
+}
+@media (max-width:1200px){
+	.header .logo{
+		margin-right: 0;
+		margin-left: 10px;
+	}
 }
 .header .logo .emblem{
 	float: left;
@@ -203,6 +248,7 @@ ul{
 	text-decoration: none;
 	padding: 18px 6px;
 	color: #202242;
+	display: inline;
 }
 .header .nav li a.active{
 	color: #ffe13e;
@@ -210,11 +256,7 @@ ul{
 }
 .header .nav li a:hover{
 	color: #ffe13e;
-}
-@media (max-width: 769px){
-	.header .nav{
-		display: none;
-	}
+	background: none;
 }
 .header .contact{
 	font-weight: 600;
@@ -247,7 +289,6 @@ ul{
 	line-height: 24px;
 	border-left: 1px solid #202242;
 }
-
 /*end header styles*/
 
 /*begin splash*/
@@ -256,7 +297,7 @@ ul{
 	background-size: cover;
 	font-size: 30px;
 	line-height: 30px;	
-	padding: 147px 0 0 0;
+	padding: 167px 0 20px 0;
 	color: #fff;
 }
 .screen._splash .semiopacity{
@@ -279,12 +320,21 @@ ul{
     z-index: 6;
     text-align: center;
 }
+@media (max-width: 992px) {
+	.screen._splash .container{	
+		height: auto;
+	}
+	.screen._splash .inside{
+	    position: relative;
+	    top: auto;
+	    transform: none;
+	}
+}
 .screen._splash .page-heading{
 	font-family: 'Rockwell', serif;
-	font-weight: 200;
 	font-size: 48px;
 	line-height: 48px;
-	margin: 0;
+	margin: 0 0 35px 0;
 }
 .screen._splash .icon{
 	display: block;
@@ -294,28 +344,28 @@ ul{
 	background-size: contain;
 	margin: 60px auto 0 auto;
 }
-.screen._splash .form-domain{
+.screen._splash .form-inline{
 	border: solid 19px rgba(221, 221, 221, .5);
 	display: inline-block;
 	margin: 60px 0 0 0;	
 	font-size: 18px;
 	line-height: 18px;
 }
-.screen._splash .form-domain .form-control{
-	float: left;
+.screen._splash .form-inline .form-group{
 	background: #ffe13e;
+	margin-bottom: 0;
 }
-.screen._splash .form-domain input{
+.screen._splash .form-inline input{
 	font-family: 'Raleway', sans-serif;
 	font-size: 18px;
 	padding: 16px 39px 15px 39px;
 	color: #2d2d2d;
 	border: 0;
 }
-.screen._splash .form-domain input::-webkit-input-placeholder{
+.screen._splash .form-inline input::-webkit-input-placeholder{
 	color: #2d2d2d;
 }
-.screen._splash .form-domain select{
+.screen._splash .form-inline select{
 	-webkit-appearance: none;
 	-moz-appearance: none;
   	appearance: none;
@@ -329,11 +379,13 @@ ul{
 	z-index: 11;
 	cursor: pointer;
 	background: none;
+	width: 100%;
+	text-align: center;
 }
-.screen._splash .form-domain .arrow-down{
+.screen._splash .form-inline .arrow-down{
 	position: relative;
 }
-.screen._splash .form-domain .arrow-down:after{
+.screen._splash .form-inline .arrow-down:after{
 	position: absolute;
     border-bottom: 1px solid #fff;
     border-left: 1px solid #fff;
@@ -345,15 +397,22 @@ ul{
     width: 10px;
     transform: rotate(-45deg);
 }
-.screen._splash .form-domain button{
+.screen._splash .form-inline button{
 	font-size: 14px;
 	line-height: 14px;
 	font-weight: bold;
-	border: 0;
-	border-left: 1px solid #fff;
 	background: #ffe13e;
 	color: #fff;
 	padding: 19px 19px 19px 19px;
+	width: 100%;
+	border: 1px solid #fff;
+}
+@media (min-width: 768px){
+	.screen._splash .form-inline button{
+		width: auto;
+		border: 0;
+		border-left: 1px solid #fff;
+	}
 }
 /*end splash*/
 
@@ -368,14 +427,14 @@ ul{
 	z-index: 5;
 	width: 50%;
 }
-.screen._services .left{
+.screen._services .back.left{
 	left: 0;
 	background: #202242;
 }
-.screen._services .right{
+
+.screen._services .back.right{
 	right: 0;
 	background: #ffe13e;
-
 }
 .screen._services .container{
 	z-index: 6;
@@ -392,22 +451,53 @@ ul{
 }
 .screen._services .icon{
 	display: inline-block;
-	height: 170px;
+	height: 110px;
 	margin: 0 0 50px 0;
 }
 .screen._services .webserv .icon{	
-	width: 164px;
+	width: 110px;
 }
 .screen._services .webserv .icon{
 	background: url(../images/webserv.png) no-repeat;
 	background-size: contain;
 }
 .screen._services .domserv .icon{
-	font-size: 134px;
-	line-height: 134px;
+	font-size: 110px;
+	line-height: 110px;
 	color:#202242;
 	font-family: 'Raleway', sans-serif;
 	font-weight: bold;
+}
+@media (max-width: 992px) {
+	.screen._services .webserv, .screen._services .domserv {
+	    padding: 50px 85px 62px 85px;
+	}
+	.screen._services .back{
+		width: 100%;
+	}
+	.screen._services .back.left{
+		right: 0;
+		height: 100%;
+		background: #ffe13e;
+	}
+	.screen._services .back.right{
+		left: 0;
+		background: #202242;
+		height: calc(100% - 50%);
+	}
+}
+@media (min-width: 768px){
+	.screen._services .icon{
+		height: 170px;
+	}
+	.screen._services .webserv .icon{	
+		width: 164px;
+	}
+	.screen._services .domserv .icon{
+		font-size: 134px;
+		line-height: 134px;
+	}
+
 }
 .screen._services h3{
 	margin: 0 0 10px 0;
@@ -433,7 +523,7 @@ ul{
 
 /*begin features*/
 .srceen._features{
-	background: url('../images/back_features.png') #fbf8f1 no-repeat center;
+	background: url('../images/back_features.png') #fbf8f1 no-repeat center fixed;
 	background-size: contain;
 }
 .srceen._features .container{
@@ -456,6 +546,11 @@ ul{
 	line-height: 24px;
 	color: #202242;
 	font-family: 'Raleway', sans-serif;
+}
+@media (min-width: 992px){	
+	.srceen._features .block-features{
+		padding: 10px 10px 70px 0;
+	}	
 }
 .srceen._features .icon{
 	display: block;
@@ -504,13 +599,12 @@ ul{
 /*end features*/
 
 /*begin clients*/
-.screen._clients{
-}
 .screen._clients .container{
 	padding: 30px 50px; 
 }
-.screen._clients .client-logo{
-	width: 170px;
+.screen._clients .client-logo img{
+	width: 100%;
+	margin: 50px 0 50px 0;
 }
 .screen._clients .screen-heading{
 	font-family: 'Raleway', sans-serif;
@@ -518,6 +612,12 @@ ul{
 	font-size: 36px;
 	line-height: 36px;
 	color: #202242;
+	text-align: center;
+}
+@media (min-width: 992px) {
+	.screen._clients .screen-heading{
+		text-align: left;
+	}
 }
 .screen._clients .client-descript{
 	 font-family:'Raleway';
@@ -558,21 +658,28 @@ ul{
 }
 /*end clients*/
 
-/*begin footer*/
-.footer .plan{
+/*begin pricing*/
+.screen._pricing{
 	background: #202242;
+	color: #fff;
 }
-.footer .plan .container{
-	padding: 135px 80px 90px 110px;
+.screen._pricing .container{
+	padding: 96px 66px 90px 122px;
 }
-.footer .navigation{
-	background: #363855;
-	padding: 90px 40px;
+.screen._pricing .screen-heading{
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 36px;
+	margin: 0 0 12px 0;
 }
-.footer .plan .heading{
-	float: left;
+.screen._pricing .screen-subheading{
+	font-family: 'Raleway', sans-serif;
+	color: #67687b;
+	font-size: 18px;
+	line-height: 18px;
 }
-.footer .plan .btn{
+.screen._pricing .btn{
 	float: right;
 	font-size: 18px;
 	line-height: 18px;
@@ -583,31 +690,24 @@ ul{
 	background: #ffe13e;
 	padding: 30px 50px;
 }
-.footer .plan .btn:hover{
+.screen._pricing .btn:hover{
 	text-decoration: none;
 	border-color: rgba(221, 221, 221, .7);
 	background: #fff;
 	transition: border-color .5s ease-in-out, background .9s ease-in-out;
 }
-.footer .screen-heading{
-	font-family: 'Raleway', sans-serif;
-	font-weight: bold;
+/*end pricing*/
+
+/*begin footer*/
+.footer{
+	background: #363855;
+	padding: 90px 40px;
 	color: #fff;
-	font-size: 36px;
-	line-height: 36px;
-	margin: 0;
 }
-.footer .screen-subheading{
-	font-family: 'Raleway', sans-serif;
-	color: #67687b;
-	font-size: 18px;
-	line-height: 18px;
-}
-.footer .navigation .map{
-	float: left;
+.footer .map{
 	height: 422px;
-	width: 834px;
-	background: url(../images/map.png);
+	width: 100%;
+	background: url(../images/map.png) no-repeat;
 	background-size: contain;
 	position: relative;
 }
@@ -624,49 +724,48 @@ ul{
 	background-size: contain;
 }
 .footer .map .tag .text-tag{
-	color: #fff;
 	font-family:'Raleway';
     font-weight:bold;
     font-size: 18px;
     line-height: 18px; 
 }
-.footer .navigation .text-nav{
+.footer .right{
+	float: right;
+}
+.footer .text-nav{
 	font-weight: bold;
 	font-size: 18px;
 	line-height: 18px;
 	padding: 0 0 15px 0;
 }
-.footer .navigation .footer-nav{
+.footer .footer-nav{
 	text-align: right;
 }
-.footer .navigation .footer-nav li{
+.footer .footer-nav li{
 	list-style: none;
     font-size: 16px;
     line-height: 16px;
     border-bottom: 1px solid #565870;
     padding: 9px 0 9px 0;
 }
-.footer .navigation .footer-nav li:last-child{
+.footer .footer-nav li:last-child{
 	border: none;
 }
-.footer .navigation .left-side{
+.footer .icon{
 	float: right;
-	color: #fff;
-}
-.footer .navigation .left-side .icon{
 	display: inline-block;
 	height: 18px;
 	width: 18px;
 	background: url(../images/soc-icon.png);
 }
-.footer .navigation .left-side .icon.twitter{
+.footer .icon.twitter{
 
 
 }
-.footer .navigation .left-side .icon.instagram{
+.footer .icon.instagram{
 	background-position: 55px;
 }
-.footer .navigation .left-side .icon.google{
+.footer .icon.google{
 	background-position: 18px;
 }
 /*end footer*/
